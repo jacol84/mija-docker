@@ -1,7 +1,7 @@
 ## DOCKER FOR ORACLE
 
 
-build  oracle/database:9.3.0-ee 
+### build  oracle/database:9.3.0-ee 
 ```
 PS C:\Windows\System32> docker images
 REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
@@ -19,6 +19,10 @@ oracle/database             19.3.0-ee           8b55fc8e0f6d        23 hours ago
 * run    
 ` ./buildDockerImage.sh -v 19.3.0 -e `
 
- show logs
-  
- `docker-compose.exe -f "docker-compose-simple-broker.yaml"  logs -f --tail=2`
+### use compose 
+ 
+ run oracle19   
+`docker-compose.exe -f .\docker-oracle\docker-compose-oracle19.yaml up -d`
+ 
+ show logs   
+`docker-compose.exe -f ".\docker-oracle\docker-compose-oracle19.yaml"  logs -f --tail=2`
