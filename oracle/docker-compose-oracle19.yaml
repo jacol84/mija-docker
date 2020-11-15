@@ -1,0 +1,18 @@
+# you first must build  oracle/database:9.3.0-ee
+version: '3.8'
+services:
+
+  oracle19:
+    container_name: oracle19
+    image: oracle/database:19.3.0-ee
+    #    image: oracle/database:latest
+    hostname: oracle19
+    environment:
+      TZ: Europe/Warsaw
+      NLS_LANG: POLISH_POLAND.AL32UTF8
+      ORACLE_SID: brak
+      ORACLE_PDB: orcl
+      ORACLE_PWD: manager
+    ports:
+      - 1521:1521
+      - 5500:5500
