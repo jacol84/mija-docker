@@ -16,5 +16,11 @@ services:
       TZ: Europe/Warsaw
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: admin
+      DB_SCHEMA: public
+      DB_PASSWORD: admin
     ports:
       - 10080:8080
