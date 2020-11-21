@@ -1,12 +1,11 @@
-# you first must build  oracle/database:9.3.0-ee
 version: '3.8'
 services:
 
-  oracle19:
-    container_name: keycloak
+  keycloak-simple:
+    container_name: keycloak-simple
     image: quay.io/keycloak/keycloak:latest
     #    image: oracle/database:latest
-    hostname: keycloak
+    hostname: keycloak-simple
     environment:
       TZ: Europe/Warsaw
       KEYCLOAK_USER: admin
