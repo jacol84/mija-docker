@@ -12,4 +12,4 @@ services:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
     ports:
-      - 8080:8080
+      - 10080:8080
