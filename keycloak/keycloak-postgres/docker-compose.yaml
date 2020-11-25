@@ -1,13 +1,15 @@
 version: '3.8'
 services:
-  postgres-k:
-    container_name: postgres
+  postgres-keycloak:
+    container_name: postgres-keycloak
     image: postgres:latest
-    hostname: postgres
+    hostname: postgres-keycloak
     environment:
       POSTGRES_DB: keycloak
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
+    ports:
+    - 5432:5432
   keycloak-postgres:
     container_name: keycloak-postgres
     image: quay.io/keycloak/keycloak:latest
@@ -17,7 +19,7 @@ services:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
       DB_VENDOR: POSTGRES
-      DB_ADDR: postgres
+      DB_ADDR: postgres-keycloak
       DB_DATABASE: keycloak
       DB_USER: admin
       DB_SCHEMA: public
