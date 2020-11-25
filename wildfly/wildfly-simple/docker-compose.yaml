@@ -4,7 +4,7 @@ services:
   wildfly-simple:
     container_name: wildfly-simple
     image: jboss/wildfly:latest
-    hostname: wildfly-simple
+    hostname:  wildfly-simple
     command:
       /opt/jboss/wildfly/bin/standalone.sh -bmanagement=0.0.0.0 -b 0.0.0.0
     environment:
