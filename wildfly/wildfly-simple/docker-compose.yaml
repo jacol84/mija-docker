@@ -6,7 +6,8 @@ services:
     image: jboss/wildfly:latest
     hostname: wildfly-simplea
     command:
-      /opt/jboss/wildfly/bin/standalone.sh -bmanagement=0.0.0.0 -b 0.0.0.0
+#      /opt/jboss/wildfly/bin/add-user.sh -u 'admin' -p 'admin' &&
+      /opt/jboss/wildfly/bin/standalone.sh -bmanagement=0.0.0.0 -b 0.0.0.0 --debug
     environment:
       TZ: Europe/Warsaw
     ports:
