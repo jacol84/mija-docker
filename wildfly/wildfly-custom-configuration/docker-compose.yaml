@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+
+  wildfly-custom:
+    container_name: wildfly-custom
+    hostname: wildfly-customa
+    image: wildfly-customa:v2
+    build: .
+    command:
+      /opt/jboss/wildfly/bin/standalone.sh -bmanagement=0.0.0.0 -b 0.0.0.0 --debug
+    environment:
+      TZ: Europe/Warsaw
+    ports:
+      - 8080:8080
+      - 8443:8443
+      - 9990:9990
