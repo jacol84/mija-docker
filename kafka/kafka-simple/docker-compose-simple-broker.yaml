@@ -20,6 +20,7 @@ services:
     image: confluentinc/cp-kafka:latest
     depends_on:
       - zookeeper
+    restart: on-failure
     environment:
       TZ: Europe/Warsaw
       KAFKA_BROKER_ID: 1
