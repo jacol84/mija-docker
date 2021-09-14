@@ -5,6 +5,7 @@ services:
     container_name: zookeeper
     image: confluentinc/cp-zookeeper:latest
     hostname: zookeeper
+    restart: always
     environment:
       TZ: Europe/Warsaw
       ZOOKEEPER_SERVER_ID: 1
@@ -20,7 +21,7 @@ services:
     image: confluentinc/cp-kafka:latest
     depends_on:
       - zookeeper
-    restart: unless-stopped
+    restart: always
     environment:
       TZ: Europe/Warsaw
       KAFKA_BROKER_ID: 1
@@ -32,3 +33,16 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: RMOFF_DOCKER_HACK
     ports:
       - 9092:9092
+
+  kouncil:
+    container_name: kouncil
+    image: consdata/kouncil:latest
+    restart: always
+    depends_on:
+      - kafka
+    environment:
+      bootstrapServers: kafka:9093
+      BOOTSTRAPSERVERS: kafka:9093
+      BOOTSTRAP_SERVERS: kafka:9093
+    ports:
+      - 8888:8080
