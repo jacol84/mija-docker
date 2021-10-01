@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+
+  postgres-db:
+    container_name: postgres-simple
+    image: postgres:latest
+    #    image: oracle/database:latest
+    hostname: postgres-db
+    environment:
+      TZ: Europe/Warsaw
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
