@@ -25,4 +25,4 @@ services:
       DB_SCHEMA: public
       DB_PASSWORD: admin
     ports:
-      - 10080:8080
+      - 8099:8080

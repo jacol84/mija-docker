@@ -1,14 +1,14 @@
 version: '3.8'
 services:
-
+#  docker run -p 8090:8080 -e TZ=Europe/Warsaw -e LANG=pl_PL.UTF-8 -e KEYCLOAK_ADMIN=admin2 -e KEYCLOAK_ADMIN_PASSWORD=admin2 quay.io/keycloak/keycloak:17.0.1 start-dev
   keycloak-simple:
     container_name: keycloak-simple
     image: quay.io/keycloak/keycloak:latest
-    #    image: oracle/database:latest
     hostname: keycloak-simple
     environment:
       TZ: Europe/Warsaw
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
+      LANG: pl_PL.UTF-8
+      KEYCLOAK_USER: admin2
+      KEYCLOAK_PASSWORD: admin2
     ports:
-      - 10080:8080
+      - 8090:8080
