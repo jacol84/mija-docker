@@ -1,5 +1,10 @@
 version: "3.8"
 
+#networks:
+#  dockernet:
+#    external: true
+
+#networks:
 networks:
   main_network:
     driver: bridge
@@ -15,19 +20,6 @@ services:
       - 8111:8111
     networks:
       [main_network]
-
-  #    volumes:
-  #      - ./data_dir:/data/teamcity_server/datadir
-  #      - ./log_dir:/opt/teamcity/logs
-#  teamcity-agent:
-#    container_name: teamcity-agent
-#    image: jetbrains/teamcity-agent
-#    environment:
-#      - SERVER_URL=http://server:8111
-#      - AGENT_NAME=regular_agent
-#      - TZ=Europe/Warsaw
-#    networks:
-#      [main_network]
   teamcity-minimal-agent:
     container_name: teamcity-minimal-agent
     image: jetbrains/teamcity-minimal-agent
