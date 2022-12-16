@@ -17,14 +17,21 @@ services:
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
 
-  kouncil:
-    image: consdata/kouncil:latest
-    restart: always
-    depends_on:
-      - kafka
+  akhq:
+    image: tchiotludo/akhq
     environment:
-      bootstrapServers: kafka:9094
-      BOOTSTRAPSERVERS: kafka:9094
-      BOOTSTRAP_SERVERS: kafka:9094
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "kafka:9094"
     ports:
-      - 8888:8080
+      - 8080:8080
+    links:
+      - kafka
+
+
+
+
+
