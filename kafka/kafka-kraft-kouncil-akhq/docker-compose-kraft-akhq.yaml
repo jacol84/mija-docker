@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   kafka:
+    container_name: kafka
     hostname: kafka
     restart: always
     image: 'bitnami/kafka:latest'
@@ -19,6 +20,7 @@ services:
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
 
   akhq:
+    container_name: akhq
     image: tchiotludo/akhq
     restart: always
     environment:
@@ -29,7 +31,7 @@ services:
               properties:
                 bootstrap.servers: "kafka:9094"
     ports:
-      - 8080:8080
+      - 9080:8080
     links:
       - kafka
 
@@ -46,6 +48,6 @@ services:
       BOOTSTRAPSERVERS: kafka:9094
       BOOTSTRAP_SERVERS: kafka:9094
     ports:
-      - 8888:8080
+      - 9888:8080
 
 
