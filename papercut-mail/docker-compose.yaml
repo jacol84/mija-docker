@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  postgres-keycloak:
+    container_name: papercut-mail
+    image: jijiechen/papercut:latest
+    hostname: papercut-mail
+    environment:
+      TZ: Europe/Warsaw
+    ports:
+    - 25:25
+    - 37408:37408

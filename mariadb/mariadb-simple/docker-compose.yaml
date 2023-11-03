@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+
+  mariadb-db:
+    container_name: mariadb-simple
+    image: mariadb:latest
+    #    image: oracle/database:latest
+    hostname: mariadb-db
+    environment:
+      TZ: Europe/Warsaw
+      MARIADB_ROOT_PASSWORD: example
+    ports:
+      - "3306:3306"
