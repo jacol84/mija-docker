@@ -1,0 +1,11 @@
+version: '3.8'
+name: ECHO HTTP PORT 9999
+services:
+
+  any-server:
+    container_name: http-https-echo-9999
+    image: mendhak/http-https-echo
+    environment:
+      TZ: Europe/Warsawk
+    ports:
+      - "9999:8080"
