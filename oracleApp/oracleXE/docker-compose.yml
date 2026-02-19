@@ -1,0 +1,13 @@
+services:
+  oracle21:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle_21_import
+    ports:
+      - "1422:1521"
+    environment:
+      - ORACLE_PASSWORD=manager
+      - APP_USER=hrubieszow_XXX
+      - APP_USER_PASSWORD=manager_XXX
+    volumes:
+      - ./init_scripts:/container-entrypoint-initdb.d
+      - ./dump_dir:/opt/oracle/admin/XE/dpdump
