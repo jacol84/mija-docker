@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  postgres-keycloak:
+  mail-srv:
     container_name: papercut-mail
     image: jijiechen/papercut:latest
     hostname: papercut-mail
