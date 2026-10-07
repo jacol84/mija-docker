@@ -48,6 +48,7 @@ services:
       bootstrapServers: kafka:9094
       BOOTSTRAPSERVERS: kafka:9094
       BOOTSTRAP_SERVERS: kafka:9094
+      kouncil.auth.active-provider: "none"
     ports:
       - 9888:8080
 
